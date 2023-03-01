@@ -6,34 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dice_for_CATAN</title>
     <link rel="stylesheet" href="css/index.css">
-    <script type="text/javascript" src="js/index.js"></script>
+    <script defer type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
-    <div id="dice">
-        <img id="dice_A" src= "img/saikoro-illust1.png" alt="dice_A">
-        <img id="dice_B" src= "img/saikoro-illust1.png" alt="dice_B">
-        <p id="result">2</p>
+    <div class="container">
+        <div class="dice">
+            <img id="dice_A" src= "img/saikoro-illust1.png" alt="dice_A">
+            <img id="dice_B" src= "img/saikoro-illust6.png" alt="dice_B">
+            <span id="result">7</span>
+        </div>
+        <div class="button">
+            <button id="Throw" type="button" onclick="Throw()">サイコロを振る</button>
+        </div>
+        <div class="data">
+            <table border="1">
+                <tr>
+                    <td id="sum1">2</td>
+                    <td id="cnt1">0</td>
+                </tr>
+                <tr>
+                    <td id="sum2">3</td>
+                    <td id="cnt2">0</td>
+                </tr>
+                <tr>
+                    <td id="sum3">4</td>
+                    <td id="cnt3">0</td>
+                </tr>
+                <tr>
+                    <td id="sum4">5</td>
+                    <td id="cnt4">0</td>
+                </tr>
+                <tr>
+                    <td id="sum5">6</td>
+                    <td id="cnt5">0</td>
+                </tr>
+                <tr>
+                    <td id="sum6">7</td>
+                    <td id="cnt6">0</td>
+                </tr>
+                <tr>
+                    <td id="sum7">8</td>
+                    <td id="cnt7">0</td>
+                </tr>
+                <tr>
+                    <td id="sum8">9</td>
+                    <td id="cnt8">0</td>
+                </tr>
+                <tr>
+                    <td id="sum9">10</td>
+                    <td id="cnt9">0</td>
+                </tr>
+                <tr>
+                    <td id="sum10">11</td>
+                    <td id="cnt10">0</td>
+                </tr>
+                <tr>
+                    <td id="sum11">12</td>
+                    <td id="cnt11">0</td>
+                </tr>
+                <tr>
+                    <td>合計</td>
+                    <td id="count">0</td>
+                </tr>
+            </table>
+        </div>
+        <button onclick="sortByFrequency()">出現回数が多い順</button>
+        <button onclick="sortByNumber()">出目が小さい順</button>
+        <button onclick="sortByProbability()">確率(理論値)が高い順</button>
     </div>
-    <button id="Throw" type="button" onclick="Throw()">Throw</button>
-
-    <div id="data">
-        <details>
-            <summary>
-                <h3>出現回数<span class="icon"></span></h3>
-                <p id="sortNumber1"></p>
-                <p id="sortNumber2"></p>
-                <p id="sortNumber3"></p>
-            </summary>
-            <p id="sortNumber4"></p>
-            <p id="sortNumber5"></p>
-            <p id="sortNumber6"></p>
-            <p id="sortNumber7"></p>
-            <p id="sortNumber8"></p>
-            <p id="sortNumber9"></p>
-            <p id="sortNumber10"></p>
-            <p id="sortNumber11"></p>
-            <p id="sortNumber12"></p>
-        </details>
-    </div>
-</body>
+    </body>
 </html>
