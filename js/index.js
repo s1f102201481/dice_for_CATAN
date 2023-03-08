@@ -12,7 +12,8 @@ let data = {
     "10": 0,
     "11": 0,
     "12": 0,
-    "count" : 0,
+    "result" : null,
+    "count" : 0
 };
 let n_list = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
 let sortStyle = "Frequency";
@@ -26,8 +27,14 @@ function Throw() {
     dice_A.src = "img/saikoro-illust" + String(a) + ".png";
     dice_B.src = "img/saikoro-illust" + String(b) + ".png";
 
+    if (data["result"] != null) {
+    const previous = document.getElementById("previous");
+    previous.textContent = String(data["result"]); //前回の結果
+    }
+
+    data["result"] = a + b; 
     const result = document.getElementById("result");
-    result.textContent = String(a+b);
+    result.textContent = String(data["result"]); //今回の結果
 
     data[String(a+b)] += 1;
     data['count'] += 1;
@@ -52,7 +59,6 @@ function updateData() {
 
 function sortByFrequency() {
     sortStyle = "Frequency";
-    n_list = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
     n_list.sort(function(a, b) {
         return data[b] - data[a];
     });
