@@ -2,7 +2,7 @@ table {
     text-align: center;
     border-collapse: collapse;
     border: solid 1px;
-    width: auto
+    width: 100%;
 }
 
 table td {
